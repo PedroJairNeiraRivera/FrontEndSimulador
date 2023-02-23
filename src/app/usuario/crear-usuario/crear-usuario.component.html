@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>{{ usuario!=null? 'Editar Usuario' : 'Nuevo Usuario' }}</h1>
+
+<div mat-dialog-content>
+    <mat-form-field>
+        <mat-label> Nombres</mat-label>
+        <input matInput [(ngModel)]="nombres">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label> Celular</mat-label>
+        <input matInput [(ngModel)]="celular">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label> Direccion</mat-label>
+        <input matInput [(ngModel)]="direccion">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label> Sexo</mat-label>
+        <select matNativeControl [(ngModel)]="sexo">
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+        </select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label> Email</mat-label>
+        <input matInput [(ngModel)]="email">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label> Fecha de Nacimiento</mat-label>
+        <input matInput [(ngModel)]="fechaNacimiento">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label> Tipo</mat-label>
+        <select matNativeControl [(ngModel)]="tipoAsociacion">
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
+        </select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label> Contraseña</mat-label>
+        <input matInput [(ngModel)]="password">
+    </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="close()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="usuario!=null? editUsuario():addUsuario()">Guardar</button>
+</div>
